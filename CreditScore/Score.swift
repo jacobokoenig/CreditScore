@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Score {
+struct Score: Equatable {
     var rating: Int = 0
     var percentage: Double = 0
     

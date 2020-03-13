@@ -8,8 +8,8 @@
 
 import Foundation
 
-class RatingFetchController {
-    func fetchRating(completion: @escaping (_ score: Score?, _ errDescription: String?) -> ()) {
+class RatingFetchController: RatingFetchControllerProtocol {
+    func fetchRating(completion: @escaping ((Result<Score, Error>) -> Void)) {
         
         guard let url = URL(string: Constants.fetchRatingUrlString) else { return } //Handle error here
         
@@ -17,6 +17,8 @@ class RatingFetchController {
             guard err == nil else { return } //Handle error here
             
             //NOTE: Since this is a mock API, we can expect the credit report info to always be returned. However, it would be necessary here to handle different scenarios such as user account being suspended
+            
+            //NOTE: Normally, I would separate the parsing of the data into a Score object on a module separate to the API
             guard
                 let data = data,
                 let parsedResponse = JSONParseController.dictionaryValue(of: data),
@@ -28,10 +30,10 @@ class RatingFetchController {
                     return
             }
             
-            let score = Score(rating: creditScore, percentage: Double(creditScore/maxScore))
+            let score = Score(rating: creditScore, percentage: Double(creditScore)/Double(maxScore))
             
             DispatchQueue.main.async {
-                completion(score, nil)
+                completion(Result.success(score))
             }
             
         }.resume()

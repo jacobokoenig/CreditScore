@@ -12,25 +12,22 @@ class RatingViewModel: ObservableObject {
     @Published var viewStatus: RatingViewModelStatus = .standby
     @Published var score: Score = Score()
     
-    func fetchRating(using api: RatingFetchController = RatingFetchController()) {
+    func fetchRating(using api: RatingFetchControllerProtocol = RatingFetchController(), completion: (()->())? = nil) {
         viewStatus = .loading
-        api.fetchRating { [weak self] score, err in
+        api.fetchRating { [weak self] result in
             guard let self = self else { return }
             
-            guard
-                let score = score
-                else {
-                    //Handle error here
-                    self.viewStatus = .standby
-                    return
-            }
-            
-            self.viewStatus = .loaded
-            
-            //Small shortcut to help with the animation of the progress bar
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            switch result {
+            case .success(let score) :
+                self.viewStatus = .loaded
                 self.score = score
+            case .failure(_):
+                //Handle error here
+                self.viewStatus = .standby
+                break
             }
+            
+            completion?()
         }
     }
 }

@@ -11,7 +11,14 @@ import SwiftUI
 struct CircularProgressView: View {
     @EnvironmentObject var ratingViewModel: RatingViewModel
     
+    @State var percentage: CGFloat = 0
+    
     var body: some View {
+        //The following is a shortcut to facilitate the circular bar animation. It would normally be logic inside of the onAppear modifier of the animated object.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            self.percentage = CGFloat(self.ratingViewModel.score.percentage)
+        }
+        
         return ZStack {
             Circle()
                 .stroke(lineWidth: 1)
@@ -20,7 +27,7 @@ struct CircularProgressView: View {
                 .padding(60)
             
             Circle()
-                .trim(from: 0.0, to: CGFloat(self.ratingViewModel.score.percentage))
+                .trim(from: 0.0, to: CGFloat(self.percentage))
                 .stroke(
                     AngularGradient(
                         gradient: Constants.csGradient, center: .center, startAngle: .degrees(0), endAngle: .degrees(360)
@@ -30,7 +37,8 @@ struct CircularProgressView: View {
                 ))
                 .rotationEffect(
                     Angle(degrees: 270.0))
-                .animation(.easeOut)
+                .animation(
+                    .easeOut)
                 .padding(70)
             
             VStack {
