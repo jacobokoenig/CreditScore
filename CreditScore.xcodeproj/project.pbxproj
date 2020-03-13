@@ -13,10 +13,13 @@
 		7E8FC863241ADF06008DE35E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E8FC862241ADF06008DE35E /* Assets.xcassets */; };
 		7E8FC866241ADF06008DE35E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E8FC865241ADF06008DE35E /* Preview Assets.xcassets */; };
 		7E8FC869241ADF06008DE35E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E8FC867241ADF06008DE35E /* LaunchScreen.storyboard */; };
-		7E8FC874241ADF07008DE35E /* CreditScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8FC873241ADF07008DE35E /* CreditScoreTests.swift */; };
+		7E8FC874241ADF07008DE35E /* RatingFetchControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8FC873241ADF07008DE35E /* RatingFetchControllerTests.swift */; };
 		7E8FC87F241AE9D4008DE35E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8FC87E241AE9D4008DE35E /* Constants.swift */; };
 		7E8FC881241AF323008DE35E /* RatingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8FC880241AF323008DE35E /* RatingViewModel.swift */; };
 		7E8FC883241AF6C0008DE35E /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8FC882241AF6C0008DE35E /* CircularProgressView.swift */; };
+		7EAABEE6241B8F9B00C89970 /* RatingFetchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAABEE5241B8F9B00C89970 /* RatingFetchController.swift */; };
+		7EAABEE8241B8FD500C89970 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAABEE7241B8FD500C89970 /* Score.swift */; };
+		7EAABEEA241B927700C89970 /* JSONParseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAABEE9241B927700C89970 /* JSONParseController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,11 +42,14 @@
 		7E8FC868241ADF06008DE35E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E8FC86A241ADF06008DE35E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E8FC86F241ADF07008DE35E /* CreditScoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreditScoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E8FC873241ADF07008DE35E /* CreditScoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScoreTests.swift; sourceTree = "<group>"; };
+		7E8FC873241ADF07008DE35E /* RatingFetchControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingFetchControllerTests.swift; sourceTree = "<group>"; };
 		7E8FC875241ADF07008DE35E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E8FC87E241AE9D4008DE35E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7E8FC880241AF323008DE35E /* RatingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewModel.swift; sourceTree = "<group>"; };
 		7E8FC882241AF6C0008DE35E /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		7EAABEE5241B8F9B00C89970 /* RatingFetchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingFetchController.swift; sourceTree = "<group>"; };
+		7EAABEE7241B8FD500C89970 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		7EAABEE9241B927700C89970 /* JSONParseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParseController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +96,10 @@
 				7E8FC860241ADF02008DE35E /* RatingView.swift */,
 				7E8FC882241AF6C0008DE35E /* CircularProgressView.swift */,
 				7E8FC87E241AE9D4008DE35E /* Constants.swift */,
+				7EAABEE9241B927700C89970 /* JSONParseController.swift */,
 				7E8FC880241AF323008DE35E /* RatingViewModel.swift */,
+				7EAABEE5241B8F9B00C89970 /* RatingFetchController.swift */,
+				7EAABEE7241B8FD500C89970 /* Score.swift */,
 				7E8FC862241ADF06008DE35E /* Assets.xcassets */,
 				7E8FC867241ADF06008DE35E /* LaunchScreen.storyboard */,
 				7E8FC86A241ADF06008DE35E /* Info.plist */,
@@ -110,7 +119,7 @@
 		7E8FC872241ADF07008DE35E /* CreditScoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				7E8FC873241ADF07008DE35E /* CreditScoreTests.swift */,
+				7E8FC873241ADF07008DE35E /* RatingFetchControllerTests.swift */,
 				7E8FC875241ADF07008DE35E /* Info.plist */,
 			);
 			path = CreditScoreTests;
@@ -217,9 +226,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EAABEE6241B8F9B00C89970 /* RatingFetchController.swift in Sources */,
 				7E8FC85D241ADF02008DE35E /* AppDelegate.swift in Sources */,
+				7EAABEE8241B8FD500C89970 /* Score.swift in Sources */,
 				7E8FC85F241ADF02008DE35E /* SceneDelegate.swift in Sources */,
 				7E8FC861241ADF02008DE35E /* RatingView.swift in Sources */,
+				7EAABEEA241B927700C89970 /* JSONParseController.swift in Sources */,
 				7E8FC881241AF323008DE35E /* RatingViewModel.swift in Sources */,
 				7E8FC883241AF6C0008DE35E /* CircularProgressView.swift in Sources */,
 				7E8FC87F241AE9D4008DE35E /* Constants.swift in Sources */,
@@ -230,7 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E8FC874241ADF07008DE35E /* CreditScoreTests.swift in Sources */,
+				7E8FC874241ADF07008DE35E /* RatingFetchControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

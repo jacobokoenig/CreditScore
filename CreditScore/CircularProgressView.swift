@@ -20,7 +20,7 @@ struct CircularProgressView: View {
                 .padding(60)
             
             Circle()
-                .trim(from: 0.0, to: CGFloat(self.ratingViewModel.percentage))
+                .trim(from: 0.0, to: CGFloat(self.ratingViewModel.score.percentage))
                 .stroke(
                     AngularGradient(
                         gradient: Constants.csGradient, center: .center, startAngle: .degrees(0), endAngle: .degrees(360)
@@ -35,7 +35,7 @@ struct CircularProgressView: View {
             
             VStack {
                 Text("Your credit score is")
-                Text(String(self.ratingViewModel.rating))
+                Text(String(self.ratingViewModel.score.rating))
                     .foregroundColor(.yellow)
                     .font(.system(size: 60))
                     .fontWeight(.ultraLight)

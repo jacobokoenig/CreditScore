@@ -10,15 +10,27 @@ import Foundation
 
 class RatingViewModel: ObservableObject {
     @Published var viewStatus: RatingViewModelStatus = .standby
-    @Published var percentage: Double = 0
-    @Published var rating: Int = 0
+    @Published var score: Score = Score()
     
-    func fetchRating() {
-        viewStatus = .loaded
-        rating = 349
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            self.percentage = 0.8
+    func fetchRating(using api: RatingFetchController = RatingFetchController()) {
+        viewStatus = .loading
+        api.fetchRating { [weak self] score, err in
+            guard let self = self else { return }
+            
+            guard
+                let score = score
+                else {
+                    //Handle error here
+                    self.viewStatus = .standby
+                    return
+            }
+            
+            self.viewStatus = .loaded
+            
+            //Small shortcut to help with the animation of the progress bar
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.score = score
+            }
         }
     }
 }
