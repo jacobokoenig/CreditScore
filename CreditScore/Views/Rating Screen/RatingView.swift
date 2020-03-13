@@ -24,7 +24,9 @@ struct RatingView: View {
                 switch self.ratingViewModel.viewStatus {
                     
                 case .loaded:
-                    return AnyView(CircularProgressView())
+                    return AnyView(
+                        CircularProgressView()
+                            .padding(60))
                     
                 case .loading:
                     return AnyView(Text("Loading..."))

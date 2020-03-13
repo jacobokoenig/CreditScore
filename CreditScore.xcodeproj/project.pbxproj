@@ -76,6 +76,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E5E5171241BD255000EC519 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7E5E5172241BD263000EC519 /* Rating Screen */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7E5E5172241BD263000EC519 /* Rating Screen */ = {
+			isa = PBXGroup;
+			children = (
+				7E8FC860241ADF02008DE35E /* RatingView.swift */,
+				7E8FC882241AF6C0008DE35E /* CircularProgressView.swift */,
+			);
+			path = "Rating Screen";
+			sourceTree = "<group>";
+		};
+		7E5E5173241BD27C000EC519 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7EAABEE9241B927700C89970 /* JSONParseController.swift */,
+				7EAABEE5241B8F9B00C89970 /* RatingFetchController.swift */,
+				7E5E516A241BC08E000EC519 /* RatingFetchControllerProtocol.swift */,
+				7E5E516C241BC0EF000EC519 /* MockRatingFetchController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7E5E5174241BD28B000EC519 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				7E8FC880241AF323008DE35E /* RatingViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		7E5E5175241BD29C000EC519 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7EAABEE7241B8FD500C89970 /* Score.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7E5E5176241BD2AF000EC519 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7E8FC87E241AE9D4008DE35E /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		7E8FC850241ADF02008DE35E = {
 			isa = PBXGroup;
 			children = (
@@ -99,15 +151,11 @@
 			children = (
 				7E8FC85C241ADF02008DE35E /* AppDelegate.swift */,
 				7E8FC85E241ADF02008DE35E /* SceneDelegate.swift */,
-				7E8FC860241ADF02008DE35E /* RatingView.swift */,
-				7E8FC882241AF6C0008DE35E /* CircularProgressView.swift */,
-				7E8FC87E241AE9D4008DE35E /* Constants.swift */,
-				7EAABEE9241B927700C89970 /* JSONParseController.swift */,
-				7E8FC880241AF323008DE35E /* RatingViewModel.swift */,
-				7EAABEE5241B8F9B00C89970 /* RatingFetchController.swift */,
-				7E5E516A241BC08E000EC519 /* RatingFetchControllerProtocol.swift */,
-				7E5E516C241BC0EF000EC519 /* MockRatingFetchController.swift */,
-				7EAABEE7241B8FD500C89970 /* Score.swift */,
+				7E5E5175241BD29C000EC519 /* Model */,
+				7E5E5171241BD255000EC519 /* Views */,
+				7E5E5174241BD28B000EC519 /* View Model */,
+				7E5E5173241BD27C000EC519 /* Controllers */,
+				7E5E5176241BD2AF000EC519 /* Helpers */,
 				7E8FC862241ADF06008DE35E /* Assets.xcassets */,
 				7E8FC867241ADF06008DE35E /* LaunchScreen.storyboard */,
 				7E8FC86A241ADF06008DE35E /* Info.plist */,

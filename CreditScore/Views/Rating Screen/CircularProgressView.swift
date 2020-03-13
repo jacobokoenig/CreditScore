@@ -24,7 +24,6 @@ struct CircularProgressView: View {
                 .stroke(lineWidth: 1)
                 .foregroundColor(
                     Color.black)
-                .padding(60)
             
             Circle()
                 .trim(from: 0.0, to: CGFloat(self.percentage))
@@ -39,7 +38,7 @@ struct CircularProgressView: View {
                     Angle(degrees: 270.0))
                 .animation(
                     .easeOut)
-                .padding(70)
+                .padding(10)
             
             VStack {
                 Text("Your credit score is")
@@ -49,7 +48,7 @@ struct CircularProgressView: View {
                     .fontWeight(.ultraLight)
                 Text("out of 700")
             }
-            .padding(100)
+            .padding(40)
         }
     }
 }
